@@ -18,6 +18,18 @@ c-compiler = ">=1.8.0,<2"
 cxx-compiler = ">=1.8.0,<2"
 python = "3.11.*"
 pip = ">=24.3.1,<24.4"
+cuda = ">=12.6.3,<13"
+gperftools = "2.10.*"
 
 [activation]
 scripts = ["env.sh"]
+
+[feature.intel.activation]
+scripts = ["run-env-intel.sh"]
+
+[feature.intel.tasks]
+install-deps = "bash scripts/install-intel-deps.sh"
+setup-render-group = "bash scripts/setup-intel-render-group.sh"
+
+[environments]
+intel = ["intel"]
